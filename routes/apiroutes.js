@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const util = require("util");
 const readfilePromise = util.promisify(fs.readFile);
-const dbData = require("../data/dbData.js"); 
+const dbData = require("../db/store.js"); 
 
 module.exports = function(app) {
     
@@ -17,9 +17,10 @@ app.get("/api/notes", function (req, res) {
     });
 
     app.post("/api/notes", function (req, res) {
-        dbData.push(req.body);        
-        console.log(req.body);
-        res.json(true);
+        let newNoteData = req.body;
+        console.log(newNoteData);
+        dbData.push(newNoteData);
+        res.json(newNoteData);
         });
 
     app.delete("/api/notes", function (req, res) {

@@ -1,19 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 const util = require("util");
-//const readfilePromise = util.promisify(fs.readFile);
-//const dbData = require("../db/store.js");
 
 module.exports = function (app) {
-  // app.get("/api/notes", function (req, res) {
-  //     readfilePromise("db/db.json", "utf8").then((data) => {
-  //     res.json(JSON.parse(data))
-  //     console.log(JSON.parse(data));
-  //     }).catch((error) => {
-  //         console.log(error);
-  //         res.json(true);
-  //         });
-  //     });
 
   app.get("/api/notes", function (req, res) {
     fs.readFile(__dirname + "/../db/db.json", function (err, data) {

@@ -30,23 +30,40 @@ module.exports = function (app) {
       for (let i = 0; i < array.length; i++) {
         array[i].id = i;
       }
-      fs.writeFile(__dirname + "/../db/db.json", JSON.stringify(array), function (err, data) {
-        if (err) {
-          console.log(err);
-        } else {
-          res.send(array);
+      fs.writeFile(
+        __dirname + "/../db/db.json",
+        JSON.stringify(array),
+        function (err, data) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.send(array);
+          }
         }
-      });
+      );
     });
   });
 
   app.delete("/api/notes/:id", function (req, res) {
-    console.log(req.params.id);
-    let array = JSON.parse(data);
-    let = req.body;
-    console.log();
-    res.json();
+    fs.readFile(__dirname + "/../db/db.json", function (err, data) {
+      if (err) console.log(err);
+      let array = JSON.parse(data);
+      const newArray = array.filter(
+        (dataItem) => dataItem.id !== parseInt(req.params.id)
+      );
+      fs.writeFile(
+        __dirname + "/../db/db.json",
+        JSON.stringify(newArray),
+        function (err, data) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.send(array);
+          }
+        }
+      );
+    });
   });
 };
 
-//need a delete function
+

@@ -12,7 +12,8 @@
 
 ## Description
 An application that can be used to write, save, and delete notes.  The application uses an express backend and filesystem to save and retrieve notes from a JSON file.  The notes are routed from the backend  and rendered to an HTML page on the frontend for the client. 
-![Here is a screenshot of the application.]()
+![Here is a screenshot of the application's start screen.]()
+![Here is a screenshot of the application running.]()
 
 ## Installation
 The application is deployed to Heroku.  Navigate to the given site to use the application.

@@ -12,11 +12,11 @@
 
 ## Description
 An application that can be used to write, save, and delete notes.  The application uses an express backend and filesystem to save and retrieve notes from a JSON file.  The notes are routed from the backend  and rendered to an HTML page on the frontend for the client. 
-
+![Here is a screenshot of the application.]()
 
 ## Installation
 The application is deployed to Heroku.  Navigate to the given site to use the application.
-
+[Here is a link to the site hosted on Heroku.]()
 ## Usage
 
 (1) Enter a title and a note into the note taker.  (2) Click the disk/save icon to save your note.  See your notes on the left hand side.  (3) To delete a note, click the garbage can/delete icon next to the note.  (4) If you're in a note and wish to start  writing a new note, click the pencil in the top right corner.
